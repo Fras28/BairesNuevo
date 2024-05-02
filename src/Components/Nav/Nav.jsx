@@ -60,7 +60,7 @@ const Nav = (id) => {
           </NavLink>
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap:".5rem", justifyContent:"center" }}>
-          <a
+          {/* <a
             className="links"
             href={`http://wa.me/+${comercio?.attributes?.whatsapp}`}
             target="_blank"
@@ -79,7 +79,7 @@ const Nav = (id) => {
                 fill="#EDB810"
               />
             </svg>
-          </a>
+          </a> */}
 
           <a
             className="links"
