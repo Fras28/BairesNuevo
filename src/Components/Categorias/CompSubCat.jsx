@@ -8,6 +8,7 @@ import Spinner from "../assets/Spinner/Spinner.jsx";
 import { useParams } from "react-router-dom/cjs/react-router-dom.min.js";
 import { asyncSubCategoria } from "../redux/slice.jsx";
 
+
 const API = process.env.REACT_APP_API_STRAPI;
 
 export const CompSubCat = ({ idCat }) => {
@@ -64,7 +65,7 @@ export const CompSubCat = ({ idCat }) => {
  
         {articulos?.length > 0 ? (
    <div className="sectioner" style={{backgroundColor:`${comercio.attributes.rgb}`}}>
-    <p> Secciones : </p>
+    <p > Secciones : </p>
    {processedNames.length > 0 && processedNames.map((name, index) => (
      <a key={index} href={`#${articulos[index].id}`}>
         {name}
@@ -77,12 +78,13 @@ export const CompSubCat = ({ idCat }) => {
         {articulos?.length > 0 ? (
           <div className="conteinerLB2 animate__animated  animate__zoomIn animate__faster">
             <div className="conteinerLB2 animate__animated animate__zoomIn animate__faster">
-              {articulos?.map((prod) => (
+              {articulos?.map((subCat) => (
+                subCat.attributes.publishedAt != null?
                 <div >
-                  <div id={prod.id} style={{height:"110px"}} ></div>
+                  <div id={subCat.id} style={{height:"110px"}} ></div>
               
-                  <Cards products={prod} />
-                </div>
+                  <Cards products={subCat} />
+                </div>:null
               ))}
             </div>
           </div>

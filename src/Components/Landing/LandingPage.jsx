@@ -51,7 +51,8 @@ export default function LandingPage(url) {
 
       <div className="conteinerLB2  ">
         <div className="rowsCardL">
-          {categorias?.map((categoria, index) => (
+        {categorias?.map((categoria, index) => (
+            categoria.attributes.publishedAt != null ?
             <NavLink
               className={`navLink `}
               to={
@@ -75,9 +76,11 @@ export default function LandingPage(url) {
                   }
                   alt="fotito"
                 />
-                 <p>{categoria?.attributes?.name.replace(/\[.*?\]/g, '')}</p>
+                <div>
+                 <p className="textCat">{categoria?.attributes?.name.replace(/\[.*?\]/g, '')}</p>
+                </div>
               </div>
-            </NavLink>
+            </NavLink> : null
           ))}
         </div>
       </div>

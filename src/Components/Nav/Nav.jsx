@@ -41,7 +41,7 @@ const Nav = (id) => {
 
   return (
 
-      <div className="nav">
+      <div className="nav" style={{ backgroundImage: `url(${API+comercio?.attributes?.fondo?.data?.attributes?.formats?.large?.url})`,  backgroundPosition: "center", backgroundSize:"cover" }}>
         <div style={{width:"40px", display:"flex",alignItems:"center"}}>
           {match && <BackButton />}
         </div>
